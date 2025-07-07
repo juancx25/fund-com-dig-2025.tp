@@ -1,6 +1,55 @@
 # fund-com-dig-2025.tp
 [ES] Trabajo Práctico de Fundamentos de Comunicaciones Digitales, correspondiente al 4to año de la carrera de Ingeniería en Computación en la UNMdP
 
+## Cómo usar
+Al ejecutar el programa, se nos presentan dos opciones en un menú, una para cada tipo de ejercicio:
+
+En la opción número 1, podremos elegir una opción para cada pulso a simular, de los cuales tenemos, en orden:
+*Unipolar NRZ*, *Unipolar RZ*, *Polar NRZ*, *Polar RZ* y *Manchester*.
+
+En la opción número 2, podremos elegir una opción para cada pulso a simular, las cuales son, en orden:
+*2-ASK*, *M-ASK*, *2-PSK*, *M-PSK*
+
+Cada codificación graficará:
+- Señal de entrada
+- Señal de salida
+- Densidad espectral de potencia de la señal
+- Tasa de error por bit asociada al código, en función de γ$_{b}$
+
+Para seleccionar una opción en el menú o submenú, ingrese el número correspondiente a cada sección y presione ENTER. La opción 'Volver' regresará al menú anterior o cerrará la aplicación (en caso de encontrarse en el menú principal).
+
+Al seleccionar una opción correspondiente a una codificación, se abrirá una ventana con los gráficos asociados. Para volver, cierre la ventana y se encontrará nuevamente en el submenú.
+
+### Señal de entrada
+La señal de entrada se genera automáticamente a la hora de ejecutar de forma distinta para cada una de las señales presentes. Esto quiere decir que, para cada ejecución nueva de la aplicación, cada código dispondrá de una señal diferente y, de necesitarse cambiar la señal de entrada para ese código específico, se requerirá un reinicio del programa.
+
+### ¿Cómo cambio las constantes asociadas?
+Existe un archivo Constants.py en la carpeta *utils/* que contiene:
+
+- DATA_SIZE: Tamaño del paquete de bits enviados.
+- Tb: Período de duración de cada bit.
+- fs: Frecuencia de muestreo.
+
+Onda modulada:
+- fc: Frecuencia de la onda portadora.
+
+Codificaciones M-arias:
+M: Multiplicidad de la codificación. 
+
+## ¿Cómo funciona?
+
+### Señales
+Una clase abstracta Signal (en *classes/Signal.py*) implementa las funciones generales de toda señal, y define aquellos métodos que serán típicos de cada señal, para poder ser implementado en cada una.
+Cada clase heredada de Signal (en *classes/Signals.py*) implementa los comportamientos de cada señal. Se puede agregar una nueva señal fácilmente respetando esos lineamientos.
+
+### Utils
+
+En */utils* se encuentran:
+
+**Menú:** Un menú genérico invocable y con la posibilidad de generar submenús llamándose a sí mismo.
+**Func:** Funciones genéricas como la distribución de probabilidad (Q).
+**Constants:** Explicado arriba. Tantas ganas de escribir no tengo, je
+
 ## Consignas
 
 ### FUNDAMENTOS DE COMUNICACIONES DIGITALES. TRABAJO PRÁCTICO.
