@@ -1,3 +1,4 @@
 tps_anteriores/
+__pycache__
 *.exe
 *.pdf
